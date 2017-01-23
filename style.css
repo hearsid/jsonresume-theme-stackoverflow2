@@ -658,3 +658,14 @@ ul.courses li:hover {
         opacity: 1 !important;
     }
 }
+
+/** added by hearsid to allow wkhtmltopdf to create correct PDF, zoom 5 **/
+
+#skills {
+    display: block;
+}
+
+#skills .item {
+    display:inline-block;
+    width: 30%;
+}
