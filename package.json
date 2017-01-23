@@ -1,11 +1,11 @@
 {
-  "name": "jsonresume-theme-stackoverflow",
-  "version": "1.0.4",
-  "description": "Stack Overflow theme for JSON Resume",
-  "author": "Francesco Esposito <http://fran.cesco.io>",
+  "name": "jsonresume-theme-stackoverflow2",
+  "version": "1.0.0",
+  "description": "Stack Overflow theme modified for JSON Resume",
+  "author": "Siddharth Sharma<hearsid.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/francescoes/jsonresume-theme-stackoverflow"
+    "url": "https://github.com/hearsid/jsonresume-theme-stackoverflow2"
   },
   "license": "MIT",
   "dependencies": {
