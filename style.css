@@ -661,11 +661,12 @@ ul.courses li:hover {
 
 /** added by hearsid to allow wkhtmltopdf to create correct PDF, zoom 5 **/
 
-#skills {
+#skills, #languages {
     display: block;
 }
 
-#skills .item {
+#skills .item, #languages .display {
     display:inline-block;
     width: 30%;
+    vertical-align: top;
 }
