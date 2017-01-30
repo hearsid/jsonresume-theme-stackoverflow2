@@ -69,7 +69,8 @@ p {
 }
 
 a {
-    color: #0095ff;
+    /*color: #0095ff;*/
+    color: #07C;
     text-decoration: none;
 }
 
