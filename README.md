@@ -1,8 +1,11 @@
-# Stack Overflow theme for jsonresume [![npm version](https://badge.fury.io/js/jsonresume-theme-stackoverflow.svg)](http://badge.fury.io/js/jsonresume-theme-stackoverflow)
+# Stack Overflow theme 2 for jsonresume 
 
-**Printable version with custom CSS**
+Features other than the original stackoverflow theme:
+1) Printable version with custom CSS.
+To make the above work use wkhtmltopdf terminal software. You may need to zoom argument/feature to get a presentable pdf version.
+2) Added pointer and date to the awards list.
 
-[DEMO](https://themes.jsonresume.org/stackoverflow)
+[DEMO](https://themes.jsonresume.org/stackoverflow2)
 
 ## Getting started
 
@@ -22,12 +25,12 @@ sudo npm install -g resume-cli
 This is a theme for JSON Resume. It is available via npm:
 
 ```
-npm install jsonresume-theme-stackoverflow
+npm install jsonresume-theme-stackoverflow2
 ```
 
 then change directory: 
 
-`cd node_modules/jsonresume-theme-stackoverflow/`
+`cd node_modules/jsonresume-theme-stackoverflow2/`
 
 And simply run:
 
@@ -42,48 +45,4 @@ Preview: http://localhost:4000
 Press ctrl-c to stop
 ```
 
-### Social Profiles Icons
-
-**Profiles supported with brand colors:**
-
-github, stack overflow, linkedin, dribbble, twitter, facebook, pinterest, instagram, soundcloud, wordpress, youtube, flickr, google plus, tumblr, foursquare.
-
-To have a social icon close the social link profile (or username) it is enough to set a `network` the name of the Social Network (es: 'Stack Overflow').
-
-#### Support to extra fields
-
-With stackoverflow theme it is possible to add:
-
-- `keywords` to each 'work', 'publication' and 'volunteer' item
-- `summary` to each 'interests' and 'education' item
-- `location` to each 'work', 'education' and 'volunteer' item
-- `birth` to 'basics'
-
-example of the extra `location` object: 
-
-```
-"location": {
-	"city": "Zürich",
-	"countryCode": "CH",
-	"region": "Switzerland"
-} 
-```
-example of the extra `birth` object:
-
-```
-"birth": {
-  "place": "New York",
-  "state": "USA",
-  "date": "1988"
-}
-```
-
-## Contribution
-
-Fork the project, add your feature (or fix your bug) and open a pull request OR
-
-[Open an issue](https://github.com/francescoes/jsonresume-theme-stackoverflow/issues/new) if you find find or if you would like to have extra fields or changes 
-
-## License
-
-Available under the [MIT license](http://opensource.org/licenses/mit-license.php).
+NOTE : To see detailed documentation see the original parent theme which is jsonresume-theme-stackoverflow
