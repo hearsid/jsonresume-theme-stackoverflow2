@@ -1,9 +1,9 @@
 # Stack Overflow theme 2 for jsonresume 
 
-Features other than the original stackoverflow theme:
-1) Printable version with custom CSS.
+## Features other than the original json resume stackoverflow theme: ##
+* Printable version with custom CSS. <br/>
 To make the above work use wkhtmltopdf terminal software. You may need to zoom argument/feature to get a presentable pdf version.
-2) Added pointer and date to the awards list.
+* Added pointer and date to the awards list.
 
 [DEMO](https://themes.jsonresume.org/stackoverflow2)
 
