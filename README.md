@@ -2,7 +2,7 @@
 
 ## Features other than the original json resume stackoverflow theme: ##
 * Printable version with custom CSS. <br/>
-To make the above work use wkhtmltopdf terminal software. You may need to zoom argument/feature to get a presentable pdf version.
+To make the above work use wkhtmltopdf terminal software. You may need to zoom argument/feature to get a presentable pdf version. ( e.g. wkhtmltopdf --zoom 4 http://127.0.0.1:4000   resume.pdf )
 * Added pointer and date to the awards list.
 
 [DEMO](https://themes.jsonresume.org/stackoverflow2)
