@@ -1,5 +1,10 @@
 # Stack Overflow theme 2 for jsonresume 
 
+#DEMO 
+http://hearsid.github.io/resume/SiddharthSharma.htm
+![alt text](https://raw.githubusercontent.com/hearsid/jsonresume-theme-stackoverflow2/master/sample/sample.png)
+
+
 ## Features other than the original json resume stackoverflow theme: ##
 * Printable version with custom CSS. <br/>
 To make the above work use wkhtmltopdf terminal software. You may need to zoom argument/feature to get a presentable pdf version. ( e.g. wkhtmltopdf --zoom 4 http://127.0.0.1:4000   resume.pdf )
