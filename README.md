@@ -1,6 +1,7 @@
 # Stack Overflow theme 2 for jsonresume 
 
-#DEMO 
+## DEMO 
+Here is an image and html link to how my resume looks after applying this theme.
 http://hearsid.github.io/resume/SiddharthSharma.htm
 ![alt text](https://raw.githubusercontent.com/hearsid/jsonresume-theme-stackoverflow2/master/sample/sample.png)
 
