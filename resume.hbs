@@ -444,6 +444,65 @@
 				</section>
 			{{/if}}
 
+        {{#if resume.projects.length}}
+        <section class="section">
+            <header>
+                <h2 class="section-title">Projects</h2>
+            </header>
+            <section id="projects">
+                {{#each resume.projects}}
+                  <header class="clear">
+                      <span class="space-left">
+                          {{#if @first}}
+                          <span class="fa fa-caret-down"></span>
+                          {{else}}
+                          <span class="fa fa-caret-right"></span>
+                          {{/if}}
+                      </span>
+                      <div class="header-left">
+                          {{#if name}}
+                            <span class="name">
+                                {{name}}
+                            </span>
+												  {{/if}}
+												{{#if url}}
+												    <span class="company">
+															<span class="website">
+			                                <a href="{{website}}">{{url}}</a>
+			                            </span>
+														</span>
+                        {{/if}}
+                    </div>
+                    {{#if releaseDate}}
+                      <span class="date">
+                          {{DMY releaseDate}}
+                      </span>
+                    {{/if}}
+                </header>
+							  {{#if @first}}
+							    <div class="item display" style="opacity:1">
+						    {{else}}
+							    <div class="item display none" style="opacity:0">
+						    {{/if}}
+								{{#if description}}
+									<div class="summary">
+										<p>{{paragraphSplit description}}</p>
+									</div>
+								{{/if}}
+
+								</div>
+								{{#if keywords.length}}
+					  			<ul class="keywords">
+							  		{{#each keywords}}
+									  <li>{{.}}</li>
+									  {{/each}}
+								  </ul>
+							  {{/if}}
+              {{/each}}
+            </section>
+        </section>
+        {{/if}}
+
 			{{#if resume.awards.length}}
 				<section class="section">
 					<header>
