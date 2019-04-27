@@ -1,15 +1,15 @@
 {
-  "name": "jsonresume-theme-stackoverflow2",
-  "version": "1.0.5",
-  "description": "Stack Overflow theme modified for JSON Resume",
-  "author": "Siddharth Sharma<hearsid.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hearsid/jsonresume-theme-stackoverflow2"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "handlebars": "latest",
-    "moment": "latest"
-  }
+    "name": "jsonresume-theme-stackoverflow3",
+    "version": "1.0.0",
+    "description": "Yet another Stack Overflow resume theme",
+    "author": "jve",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hearsid/jsonresume-theme-stackoverflow2"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "handlebars": "latest",
+        "moment": "latest"
+    }
 }
