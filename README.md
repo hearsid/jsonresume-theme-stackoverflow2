@@ -24,11 +24,12 @@ The official [resume-cli](https://github.com/jsonresume/resume-cli) to run the d
 Go ahead and install it:
 
 ```
-sudo npm install -g resume-cli
+npm install -g resume-cli
 ```
+
 ### Install and serve theme
 
-This is a theme for JSON Resume. It is available via npm:
+Clone the repository
 
 ```
 npm install jsonresume-theme-stackoverflow2

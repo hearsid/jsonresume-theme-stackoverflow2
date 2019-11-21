@@ -1,81 +1,44 @@
-(function() {
-    var fs = require("fs");
-    var Handlebars = require("handlebars");
-    var moment = require("moment");
+const Handlebars = require('handlebars');
+const { readFileSync, readdirSync } = require('fs');
+const { join } = require('path');
 
-    function render(resume) {
-    	var css = fs.readFileSync(__dirname + "/style.css", "utf-8");
-    	var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
-    	
-    	return Handlebars.compile(tpl)({
-    		css: css,
-    		resume: resume
-    	});
-    }
+const HELPERS = join(__dirname, 'theme/hbs-helpers');
 
-    module.exports = {
-    	render: render
-    };
+const { birthDate } = require(join(HELPERS, 'birth-date.js'));
+const { dateHelpers } = require(join(HELPERS, 'date-helpers.js'));
+const { paragraphSplit } = require(join(HELPERS, 'paragraph-split.js'));
+const { toLowerCase } = require(join(HELPERS, 'to-lower-case.js'));
+const { spaceToDash } = require(join(HELPERS, 'space-to-dash.js'));
 
+const { MY, Y, DMY } = dateHelpers;
 
-    /* HANDLEBARS HELPERS */
-    Handlebars.registerHelper('paragraphSplit', function(plaintext) {
-        var output = '';
-        var lines = plaintext instanceof Array ? plaintext.join('').split(/\r\n|\r|\n/g) : plaintext.split(/\r\n|\r|\n/g);
-        var i = 0;
+Handlebars.registerHelper('birthDate', birthDate);
+Handlebars.registerHelper('paragraphSplit', paragraphSplit);
+Handlebars.registerHelper('spaceToDash', spaceToDash);
+Handlebars.registerHelper('toLowerCase', toLowerCase);
+Handlebars.registerHelper('MY', MY);
+Handlebars.registerHelper('Y', Y);
+Handlebars.registerHelper('DMY', DMY);
 
-        while(i < lines.length) {
-            if(lines[i]) {
-                output += '<p>' + lines[i] + '</p>';
-            }
-            i += 1;
-        }
+function render(resume) {
+  const css = readFileSync(`${__dirname}/style.css`, 'utf-8');
+  const tpl = readFileSync(`${__dirname}/resume.hbs`, 'utf-8');
+  const partialsDir = join(__dirname, 'theme/partials');
+  const filenames = readdirSync(partialsDir);
 
-        return new Handlebars.SafeString(output);
-    });
+  filenames.forEach((filename) => {
+    const matches = /^([^.]+).hbs$/.exec(filename);
+    if (!matches) return;
+    const name = matches[1];
+    const filepath = join(partialsDir, filename);
+    const template = readFileSync(filepath, 'utf8');
+    Handlebars.registerPartial(name, template);
+  });
 
-    Handlebars.registerHelper('toLowerCase', function(str) {
-      return str.toLowerCase();
-    });
+  return Handlebars.compile(tpl)({
+    css,
+    resume,
+  });
+}
 
-    Handlebars.registerHelper('spaceToDash', function(str) {
-      return str.replace(/\s/g, '-').toLowerCase();
-    });
-
-    Handlebars.registerHelper('MY', function(date) {
-    	return moment(date.toString(), ['YYYY-MM-DD']).format('MMMM YYYY');
-    });
-
-    Handlebars.registerHelper('Y', function(date) {
-        return moment(date.toString(), ['YYYY-MM-DD']).format('YYYY');
-    });
-
-    Handlebars.registerHelper('DMY', function(date) {
-        return moment(date.toString(), ['YYYY-MM-DD']).format('D MMMM YYYY');
-    });
-
-    Handlebars.registerHelper('birthData', function(birth) {
-        var out = [];
-        if (birth && Object.keys(birth).length) {
-            out.push('<div> Born in ');
-            out.push(birth.place);
-
-            if (birth.place && birth.state) {
-                out.push(', ');
-            }
-
-            out.push(birth.state);
-
-            var year = birth.date &&
-                moment(birth.date.toString(), ['YYYY-MM-DD']).format('YYYY');
-
-            if (year && (birth.place || birth.state)) {
-                out.push(' in ');
-            }
-            out.push(year);
-            out.push('</div>');
-        }
-
-        return new Handlebars.SafeString(out.join(''));
-    });
-}());
+module.exports = { render };
