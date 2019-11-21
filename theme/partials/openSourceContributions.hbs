@@ -1,0 +1,29 @@
+{{#if resume.openSourceContributions.length}}
+<section class="section">
+  <header>
+    <h2 class='section-title'>Open source contributions<span class="item-count">({{resume.openSourceContributions.length}})</span></h2>
+  </header>
+
+  <section id="work">
+    {{#each resume.openSourceContributions}}
+    <section class="work-item">
+{{#if organization}}
+				<div class="position">{{organization}}</div>
+				{{/if}}
+
+			{{#if website}}
+    	<span class="website">
+    		<a target="_blank" href="{{website}}">{{website}}</a>
+    	</span> {{/if}} 
+  
+    	<div class="item" id="work-item">
+        {{#if summary}}
+        <div class="summary">{{paragraphSplit summary}}</div>
+        {{/if}}
+  
+    	</div>
+    </section>
+    {{/each}}
+  </section>
+</section>
+{{/if}}
